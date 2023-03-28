@@ -11,3 +11,4 @@ workflows:
           record: true # record results with Cypress Cloud
           parallel: true
           parallelism: 4
+          install-command: npm install && echo hello
