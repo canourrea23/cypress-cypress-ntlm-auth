@@ -23,7 +23,7 @@ context('Assertions', () => {
         // first need to invoke jQuery method text()
         // and then match using regular expression
         .invoke('text')
-        .should('match', /column content/i)
+        .should('match1', /column content/i)
 
       // a better way to check element's text content against a regular expression
       // is to use "cy.contains"
@@ -65,7 +65,20 @@ context('Assertions', () => {
       // of explicit assertions within it.
       // The ".should(cb)" function will be retried
       // automatically until it passes all your explicit assertions or times out.
+
+      cy.get('.assertions-p').should(($div) => {
+        // all the code inside here will retry
+        // until it passes or times out
+        const n = parseFloat($div.text())
+      
+        expect(n).to.be.gte(1).and.be.lte(10)
+      })
+
       cy.get('.assertions-p')
+      .invoke('text') // "🎁"
+      .then(parseFloat) // NaN
+      .should('be.gte', 1) // fails
+      .and('be.lte', 10) // n
         .find('p')
         .should(($p) => {
           // https://on.cypress.io/$
@@ -171,6 +184,13 @@ context('Assertions', () => {
 
           expect(n).to.be.gte(1).and.be.lte(10)
         })
+    })
+    it('testing', () => {
+      cy.get('[data-testid="random-number"]') // <div>🎁</div>
+      .invoke('text') // "🎁"
+      .then(parseFloat) // NaN
+      .should('be.gte', 1) // fails
+      .and('be.lte', 10) // never evaluates
     })
   })
 })
