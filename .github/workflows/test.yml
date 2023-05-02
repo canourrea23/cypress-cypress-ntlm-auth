@@ -1,0 +1,58 @@
+name: Cypress Tests
+
+on: push
+
+jobs:
+  install:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress install
+        uses: cypress-io/github-action@v5
+        with:
+          runTests: false
+          #input the appropriate build command below i.e. npm run build
+          build: 'BUILD COMMAND HERE'
+
+      - name: Save build folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          if-no-files-found: error
+          #input the appropriate build folder path below i.e. build
+          path: 'BUILD FOLDER PATH HERE'
+  cypress-run:
+    permissions: write-all
+    runs-on: ubuntu-22.04
+    needs: install
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3, 4, 5]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Download the build folder
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          #insert the applicable port # below i.e.http://localhost:3000
+          wait-on: 'APPLICABLE PORT #'
+          wait-on-timeout: 120
+          record: true
+          parallel: true
+          browser: chrome
+          #insert the applicable start command below i.e. npm run start
+          start: 'START COMMAND HERE'
+        env: 
+          #You must add the CYPRESS_RECORD_KEY and PROJECT_ID to your repo as secrets
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECT_ID }}
