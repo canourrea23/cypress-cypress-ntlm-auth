@@ -4,14 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "open cypress"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.8.1"
+    "cypress": "^12.11.0"
   },
   "devDependencies": {
+    "@cypress/code-coverage": "^3.10.4",
     "cypress-ntlm-auth": "^3.2.0"
   }
 }

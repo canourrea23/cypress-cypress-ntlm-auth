@@ -6,11 +6,14 @@ module.exports = defineConfig({
     "trashAssetsBeforeRuns": true,
     experimentalStudio: true,
     setupNodeEvents(on, config) {
+      require('@cypress/code-coverage/task')(on, config)
       // implement node event listeners here
+
+      return config
     },
       retries: {
         runMode: 2,
-        openMode: 4,
+        openMode: 2,
       },
   },
 });
