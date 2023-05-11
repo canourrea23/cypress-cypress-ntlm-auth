@@ -6,7 +6,7 @@ module.exports = defineConfig({
     "trashAssetsBeforeRuns": true,
     experimentalStudio: true,
     setupNodeEvents(on, config) {
-      require('@cypress/code-coverage/task')(on, config)
+      // require('@cypress/code-coverage/task')(on, config)
       // implement node event listeners here
 
       return config
@@ -15,6 +15,7 @@ module.exports = defineConfig({
         runMode: 2,
         openMode: 2,
       },
+      excludeSpecPattern: './cypress/screenshots/**.{js,jsx,ts,tsx}'
   },
 });
 
