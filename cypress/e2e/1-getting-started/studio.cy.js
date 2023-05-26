@@ -1,6 +1,6 @@
 describe('pappulo test', () => {
     beforeEach(() => {
-        cy.visit('https://upx-test.eu.poppulo-harmony.com/');
+        cy.visit('https://example.cypress.io/todo');
     })
     it('hello', () => {
 
