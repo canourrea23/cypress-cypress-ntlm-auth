@@ -5,5 +5,5 @@ workflows:
   use-my-orb:
     jobs:
       - cypress/run:
-          cypress-command: npx cypress run --parallel --record --headless
+          cypress-command: npx cypress run --headless
           parallelism: 3
