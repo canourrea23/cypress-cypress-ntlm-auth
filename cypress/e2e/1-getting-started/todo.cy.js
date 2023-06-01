@@ -1,3 +1,41 @@
+const logSizes = () => {
+  
+  const windowWidth = window.top.innerWidth
+  const windowHeight = window.top.innerHeight
+
+  cy.log(`browser window is: **${windowWidth} x ${windowHeight}**`)
+
+  
+  const commandLog = window.top.document.querySelector('.reporter-wrap')
+  const commandLogWidth = commandLog.offsetWidth
+  const commandLogHeight = commandLog.offsetHeight
+
+  cy.log(`command log is: **${commandLogWidth} x ${commandLogHeight}**`)
+
+  
+  cy.window({ log: false }).then((win) => {
+    
+    
+    const iframe = cy.state('$autIframe')
+    const iframeWidth = Math.round(iframe.width())
+    const iframeHeight = Math.round(iframe.height())
+
+    cy.log(`app iframe real size is: **${iframeWidth} x ${iframeHeight}**`)
+
+    
+    
+    const viewportWidth = win.innerWidth
+    const viewportHeight = win.innerHeight
+
+    cy.log(`app viewport is: **${viewportWidth} x ${viewportHeight}**`)
+  })
+}
+
+it('loads the site', () => {
+  cy.visit('/')
+  logSizes()
+  cy.screenshot('wiki', { capture: 'runner' })
+})
 // /// <reference types="cypress" />
 // // Welcome to Cypress!
 // //
