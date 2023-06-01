@@ -5,5 +5,5 @@ workflows:
   use-my-orb:
     jobs:
       - cypress/run:
-          cypress-command: npx cypress run --record --key
+          cypress-command: npx cypress run --record --key 7f809f02-a8f5-466e-b5b6-bf478991511b
           parallelism: 3
