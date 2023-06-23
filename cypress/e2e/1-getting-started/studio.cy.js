@@ -6,4 +6,12 @@ describe('pappulo test', () => {
 
         cy.log('hello')
     })
+
+    /* ==== Test Created with Cypress Studio ==== */
+    it('studio example ', function() {
+        /* ==== Generated with Cypress Studio ==== */
+        cy.get(':nth-child(1) > .view > .toggle').check();
+        cy.get(':nth-child(2) > .view > .toggle').check();
+        /* ==== End Cypress Studio ==== */
+    });
 })
