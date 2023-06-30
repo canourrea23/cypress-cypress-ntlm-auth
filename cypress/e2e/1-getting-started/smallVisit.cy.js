@@ -7,6 +7,10 @@ describe('example to-do app', () => {
         cy.visit('https://example.cypress.io/todo')
     })
     it('visit made', () => {
+        cy.get('.new-todo') .then(($button) => {
+            return Promise.delay(1000)
+      .type('write code{enter}')
         cy.log('hello')
+        })
     })
 })

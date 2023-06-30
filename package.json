@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "browserslist": "^4.21.9",
     "ci": "^2.2.0",
     "cypress": "^12.11.0"
   },

@@ -115,7 +115,7 @@ context('Assertions', () => {
         })
         // .then(cb) callback is not retried,
         // it either passes or fails
-        .then(($div) => {
+        .then(($h1) => {
           expect($div, 'text content').to.have.text('Introduction')
         })
     })

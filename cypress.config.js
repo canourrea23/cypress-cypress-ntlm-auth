@@ -3,24 +3,30 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   // viewportWidth: 4509,
   // viewportHeight: 3000,
-  projectId: 'jc44sv',
-  numTestskeptInMemory:0,
+  // defaultCommandTimeout: "90000",
+  projectId: "jc44sv",
+  numTestskeptInMemory: 0,
   e2e: {
-    "trashAssetsBeforeRuns": true,
+    trashAssetsBeforeRuns: true,
     experimentalStudio: true,
-    baseUrl: 'https://uat-centr.loupactive.com',
+    baseUrl: "https://uat-centr.loupactive.com",
     setupNodeEvents(on, config) {
       // require('@cypress/code-coverage/task')(on, config)
       // implement node event listeners here
 
-      return config
+      return config;
     },
-      retries: {
-        runMode: 3,
-        openMode: 3,
-      },
-      // excludeSpecPattern: './cypress/screenshots/**.{js,jsx,ts,tsx}, ./cypress/screenshots/**.{js,jsx,ts,tsx}'
+    retries: {
+      runMode: 3,
+      openMode: 1,
+    },
+    // excludeSpecPattern: './cypress/screenshots/**.{js,jsx,ts,tsx}, ./cypress/screenshots/**.{js,jsx,ts,tsx}'
+  },
+
+  component: {
+    devServer: {
+      framework: "create-react-app",
+      bundler: "webpack",
+    },
   },
 });
-
-
