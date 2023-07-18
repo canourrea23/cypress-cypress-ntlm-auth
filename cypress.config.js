@@ -8,7 +8,9 @@ module.exports = defineConfig({
   projectId: "9kusd7",
   numTestskeptInMemory: 0,
   e2e: {
+    // specPattern: './cypress/e2e/**/**.{js}',
     trashAssetsBeforeRuns: true,
+    experimentalStudio: true,
     experimentalStudio: true,
     baseUrl: "https://uat-centr.loupactive.com",
     setupNodeEvents(on, config) {
@@ -21,6 +23,7 @@ module.exports = defineConfig({
       runMode: 3,
       openMode: 1,
     },
+    
     // excludeSpecPattern: './cypress/screenshots/**.{js,jsx,ts,tsx}, ./cypress/screenshots/**.{js,jsx,ts,tsx}'
   },
 
