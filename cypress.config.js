@@ -1,10 +1,11 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  video: false,
   // viewportWidth: 4509,
   // viewportHeight: 3000,
   // defaultCommandTimeout: "90000",
-  projectId: "jc44sv",
+  projectId: "9kusd7",
   numTestskeptInMemory: 0,
   e2e: {
     trashAssetsBeforeRuns: true,

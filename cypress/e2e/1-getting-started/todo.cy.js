@@ -68,10 +68,12 @@ describe('example to-do app', () => {
     cy.get('.view').should('have.length', 5)
   
     cy.get('.view').first().find('.toggle').check()
+
   
     cy.get('.view').first().should('have.class', 'completed')
   })
 })
+
     
 //     // We can go even further and check that the default todos each contain
 //     // the correct text. We use the `first` and `last` functions
