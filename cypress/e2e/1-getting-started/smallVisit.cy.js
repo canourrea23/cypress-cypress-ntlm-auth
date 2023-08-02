@@ -17,7 +17,7 @@
 
 it('Handling alert in Cypress', function (){
   // launch url
-  cy.visit("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_alert");
+  cy.visit("file:///Users/carolina/Desktop/Repos/cypress-cypress-ntlm-auth/index.html");
   
   //Running the the code snippet to generate the Popup button
   // cy.get('#runbtn').click();

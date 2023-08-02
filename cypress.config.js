@@ -12,7 +12,7 @@ module.exports = defineConfig({
     trashAssetsBeforeRuns: true,
     experimentalStudio: true,
     experimentalStudio: true,
-    baseUrl: "https://uat-centr.loupactive.com",
+    // baseUrl: "https://uat-centr.loupactive.com",
     setupNodeEvents(on, config) {
       // require('@cypress/code-coverage/task')(on, config)
       // implement node event listeners here
