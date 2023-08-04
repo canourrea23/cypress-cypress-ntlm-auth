@@ -12,7 +12,7 @@
   "dependencies": {
     "browserslist": "^4.21.9",
     "ci": "^2.2.0",
-    "cypress": "^12.17.1"
+    "cypress": "https://cdn.cypress.io/beta/npm/13.0.0/darwin-arm64/release/13.0.0-d2058a3e002e9f565ba67b5effc20b64defe0157/cypress.tgz"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.4",

@@ -7,3 +7,15 @@ workflows:
       - cypress/run:
           cypress-command: npx cypress run --record --key 7f809f02-a8f5-466e-b5b6-bf478991511b
           parallelism: 3
+
+1x-electron:
+    <<: *defaults
+    steps:
+      # restore application and Cypress binary before running the test command
+      - attach_workspace:
+          at: ~/
+      - run:
+          command: npm start
+          background: true
+      # run all tests and pass group name (should be "1x-electron" in this case)
+      - run: npm run e2e:record -- --group $CIRCLE_JOB
