@@ -11,11 +11,11 @@
   "license": "ISC",
   "dependencies": {
     "browserslist": "^4.21.9",
-    "ci": "^2.2.0",
-    "cypress": "https://cdn.cypress.io/beta/npm/13.0.0/darwin-arm64/release/13.0.0-d2058a3e002e9f565ba67b5effc20b64defe0157/cypress.tgz"
+    "ci": "^2.2.0"
   },
   "devDependencies": {
     "@cypress/code-coverage": "^3.10.4",
+    "cypress": "^13.3.0",
     "cypress-ntlm-auth": "^3.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
