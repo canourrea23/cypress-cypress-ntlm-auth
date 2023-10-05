@@ -9,7 +9,7 @@ workflows:
           parallelism: 3
 
 1x-electron:
-    <<: *defaults
+    <<: defaults
     steps:
       # restore application and Cypress binary before running the test command
       - attach_workspace:
